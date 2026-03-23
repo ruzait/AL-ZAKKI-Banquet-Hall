@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL-ZAKKI BANQUET HALL | ADDALAICHENAI</title>
+    <meta name="description" content="The biggest, most friendly, and flexible banquet hall in Addalaichenai. Perfect for weddings, conferences, and all special events at affordable prices.">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                </span>
+                <span class="logo-text">AL-ZAKKI</span>
+            </a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="hero-slider">
+                <div class="hero-slide" style="background-image: url('assets/hall.png')"></div>
+                <div class="hero-slide" style="background-image: url('assets/hall2.png')"></div>
+            </div>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-line"></span>
+                <span>The Biggest Venue</span>
+                <span class="badge-line"></span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">AL-ZAKKI</span>
+                <span class="title-line gradient">Banquet Hall</span>
+            </h1>
+            <p class="hero-subtitle">Your Perfect Celebration Awaits in Addalaichenai</p>
+            <div class="hero-cta">
+                <a href="#services" class="btn btn-primary">
+                    <span>Explore Events</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-ghost">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">About Us</span>
+                <h2 class="section-title">Why Choose <span class="highlight">Al-Zakki</span>?</h2>
+                <p class="section-subtitle">Where Every Celebration Becomes a Memory — Elegance, Comfort, Flexibility</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="image-placeholder">
+                            <img src="assets/hall2.png" alt="Al-Zakki Banquet Hall">
+                        </div>
+                        <div class="image-shimmer"></div>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="years">5+</span>
+                        <span class="text">Years of Excellence</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h3>Largest & Most Welcoming <span class="highlight">Banquet</span> Hall</h3>
+                    <p>AL-ZAKKI BANQUET HALL is the biggest, most friendly, and flexible banquet hall located on Addalaichenai Main Road — well-known and easily accessible for everyone. Established in 2020, we proudly offer 5+ years of excellence in hosting memorable celebrations and gatherings.</p>
+                    <ul class="features-list">
+                        <li>
+                            <span class="feature-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </span>
+                            <span>Spacious 3-floor venue with capacity up to 3000 guests</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </span>
+                            <span>Basic sound system with minimal stage lighting</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </span>
+                            <span>Dedicated bridal suite & prayer area</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </span>
+                            <span>Nearby parking available for 50+ vehicles</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </span>
+                            <span>Flexible & affordable packages for all budgets</span>
+                        </li>
+                    </ul>
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-badge">Our Services</span>
+                <h2 class="section-title">Perfect for <span class="highlight">Every</span> Occasion</h2>
+                <p class="section-subtitle">From intimate gatherings to grand celebrations</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-service="wedding">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3>Wedding Ceremony</h3>
+                    <p class="service-type">Registration & Reception</p>
+                    <p>Create your dream wedding in our magnificent hall with elegant decorations and professional arrangements.</p>
+                    <div class="service-features">
+                        <span>Bridal Room</span>
+                        <span>Stage Decoration</span>
+                        <span>Photo Area</span>
+                    </div>
+                </div>
+                <div class="service-card featured" data-service="walima">
+                    <div class="featured-badge">Popular</div>
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/>
+                        </svg>
+                    </div>
+                    <h3>Walima & Lunch Party</h3>
+                    <p class="service-type">Islamic Wedding Reception</p>
+                    <p>Celebrate your joyous occasion with family and friends in our spacious, beautifully designed venue.</p>
+                    <div class="service-features">
+                        <span>Catering Space</span>
+                        <span>Prayer Area</span>
+                        <span>Valet Service</span>
+                    </div>
+                </div>
+                <div class="service-card" data-service="conference">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75M9 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+                        </svg>
+                    </div>
+                    <h3>Conference Meeting</h3>
+                    <p class="service-type">Corporate Events</p>
+                    <p>Host professional conferences and seminars with state-of-the-art audiovisual equipment.</p>
+                    <div class="service-features">
+                        <span>Projector</span>
+                        <span>Microphones</span>
+                        <span>WiFi Ready</span>
+                    </div>
+                </div>
+                <div class="service-card" data-service="political">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-6h6v6"/>
+                        </svg>
+                    </div>
+                    <h3>Cooperative & Political</h3>
+                    <p class="service-type">Large Gatherings</p>
+                    <p>Perfect for political meetings, cooperative gatherings, and community events of any size.</p>
+                    <div class="service-features">
+                        <span>Stage Setup</span>
+                        <span>PA System</span>
+                        <span>Seating Arrangements</span>
+                    </div>
+                </div>
+                <div class="service-card" data-service="official">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+                        </svg>
+                    </div>
+                    <h3>Official Events</h3>
+                    <p class="service-type">Government & Corporate</p>
+                    <p>Professional venue for government ceremonies, official launches, and corporate functions.</p>
+                    <div class="service-features">
+                        <span>VIP Section</span>
+                        <span>Formal Setup</span>
+                        <span>Flag Display</span>
+                    </div>
+                </div>
+                <div class="service-card" data-service="award">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="8" r="7"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/>
+                        </svg>
+                    </div>
+                    <h3>Awarding Ceremony</h3>
+                    <p class="service-type">Recognition Events</p>
+                    <p>Celebrate achievements and recognize excellence in a prestigious setting with theater-style seating.</p>
+                    <div class="service-features">
+                        <span>Stage Lighting</span>
+                        <span>Trophy Display</span>
+                        <span>Red Carpet</span>
+                    </div>
+                </div>
+                <div class="service-card" data-service="competition">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+                        </svg>
+                    </div>
+                    <h3>Competition Events</h3>
+                    <p class="service-type">Talent & Skill Shows</p>
+                    <p>Host competitions, talent shows, and skill-based events with proper stage and audience arrangement.</p>
+                    <div class="service-features">
+                        <span>Scoring System</span>
+                        <span>Display Screens</span>
+                        <span>Backstage Area</span>
+                    </div>
+                </div>
+                <div class="service-card cta-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3>Event Planning</h3>
+                    <p class="service-type">Full Service</p>
+                    <p>Let our experienced team handle every detail of your event from start to finish.</p>
+                    <a href="#contact" class="btn btn-primary btn-block">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Gallery</span>
+                <h2 class="section-title">Our <span class="highlight">Beautiful</span> Venue</h2>
+                <p class="section-subtitle">Glimpses of memorable events at Al-Zakki</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item large">
+                    <div class="gallery-placeholder">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M3 21h18M5 21V7l8-4 8 4v14"/>
+                        </svg>
+                        <p>Main Hall View</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span>Main Hall</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <p>Wedding Setup</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span>Wedding</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3zM19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
+                        </svg>
+                        <p>Stage Area</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span>Stage</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                        </svg>
+                        <p>Dining Area</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span>Dining</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                        <p>Lighting</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span>Lighting</span>
+                    </div>
+                </div>
+                <div class="gallery-item large">
+                    <div class="gallery-placeholder">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                        <p>Evening View</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span>Evening</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Pricing</span>
+                <h2 class="section-title">Affordable <span class="highlight">Packages</span></h2>
+                <p class="section-subtitle">Choose the perfect package for your event</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <div class="pricing-header">
+                        <h3>Half Day</h3>
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">Rs.</span>
+                        <span class="amount">25,000</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Hall rental</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Basic seating</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> AC included</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Parking</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Book Now</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Popular</div>
+                    <div class="pricing-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="pricing-header">
+                        <h3>Full Day</h3>
+                        <p>10 Hours</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">Rs.</span>
+                        <span class="amount">45,000</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Hall rental</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Full seating</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> AC + Sound</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Parking + Security</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Basic decoration</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-block">Book Now</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
+                        </svg>
+                    </div>
+                    <div class="pricing-header">
+                        <h3>Wedding Special</h3>
+                        <p>Full Event</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">Rs.</span>
+                        <span class="amount">75,000</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> 12 Hours access</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Full decoration</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Bridal room</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Photo area</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Sound + Lighting</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Book Now</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <p>VIP Package</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="amount">Custom</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Everything included</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Event planning</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Catering coordination</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Photography/Video</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> VIP service</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Get Quote</a>
+                </div>
+            </div>
+            <p class="pricing-note">* Prices may vary based on event type and requirements. Contact us for detailed quotes.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Get in <span class="highlight">Touch</span></h2>
+                    <p>Ready to book your event? Contact us today for availability and quotes.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Al-Zakki Banquet Hall<br>Addalaichenai, Sri Lanka</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+94 XX XXX XXXX</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@alzakki.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </span>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>24/7 Available for Bookings<br>Office: 8:00 AM - 8:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Book Your Event</h3>
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+94 XX XXX XXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventType">Event Type</label>
+                            <select id="eventType" name="eventType" required>
+                                <option value="">Select event type</option>
+                                <option value="wedding">Wedding Ceremony</option>
+                                <option value="walima">Walima / Lunch Party</option>
+                                <option value="conference">Conference Meeting</option>
+                                <option value="political">Cooperative / Political Meeting</option>
+                                <option value="official">Official Event</option>
+                                <option value="awarding">Awarding Ceremony</option>
+                                <option value="competition">Competition Event</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="eventDate">Event Date</label>
+                                <input type="date" id="eventDate" name="eventDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Expected Guests</label>
+                                <input type="number" id="guests" name="guests" placeholder="e.g., 200" min="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Details</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us more about your event..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>Send Booking Request</span>
+                            <span class="loading-spinner"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#" class="logo">
+                            <span class="logo-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </span>
+                            <span class="logo-text">AL-ZAKKI</span>
+                        </a>
+                        <p>The biggest, most friendly, and flexible banquet hall in Addalaichenai. Creating memorable events since 2020.</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-services">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li>Wedding Ceremonies</li>
+                            <li>Walima & Lunch Parties</li>
+                            <li>Conference Meetings</li>
+                            <li>Official Events</li>
+                            <li>Event Planning</li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>Addalaichenai, Sri Lanka</p>
+                        <p>+94 XX XXX XXXX</p>
+                        <p>info@alzakki.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>2024 Al-Zakki Banquet Hall. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
