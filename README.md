@@ -83,4 +83,4 @@ Or connect to GitHub for auto-deploy:
 - **Email**: info@alzakki.com
 - **Location**: Akkaraipattu Kalmunai Road, Addalaichenai - 09, Ampara, Sri Lanka
 
-© 2024 Al-Zakki Hall
+© 2026 Al-Zakki Hall
