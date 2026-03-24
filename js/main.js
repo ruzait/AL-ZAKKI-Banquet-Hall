@@ -1,9 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
+    initDynamicDates();
     initNavbar();
     initSmoothScroll();
     initGSAPAnimations();
     initForm();
 });
+
+function initDynamicDates() {
+    const currentYear = new Date().getFullYear();
+    const establishmentYear = 2020;
+    
+    const currentYearEl = document.getElementById('currentYear');
+    if (currentYearEl) {
+        currentYearEl.textContent = currentYear;
+    }
+    
+    const yearsOfExcellence = currentYear - establishmentYear;
+    const yearsOfExcellenceEl = document.getElementById('yearsOfExcellence');
+    if (yearsOfExcellenceEl) {
+        yearsOfExcellenceEl.textContent = yearsOfExcellence + '+';
+    }
+    
+    const yearsTextEl = document.getElementById('yearsText');
+    if (yearsTextEl) {
+        yearsTextEl.textContent = yearsOfExcellence + '+';
+    }
+}
 
 function initNavbar() {
     const navbar = document.querySelector('.navbar');
@@ -110,6 +132,32 @@ function initGSAPAnimations() {
             }
         }
     );
+
+    const featureItems = document.querySelectorAll('.feature-item');
+    featureItems.forEach((item, index) => {
+        gsap.fromTo(item,
+            { 
+                opacity: 0, 
+                x: -30 
+            },
+            {
+                opacity: 1,
+                x: 0,
+                duration: 0.5,
+                delay: 0.5 + (index * 0.15),
+                scrollTrigger: {
+                    trigger: '.features-list',
+                    start: 'top 80%'
+                },
+                onComplete: () => {
+                    gsap.fromTo(item.querySelector('.feature-icon'),
+                        { scale: 0, opacity: 0 },
+                        { scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(1.7)' }
+                    );
+                }
+            }
+        );
+    });
 
     gsap.fromTo('.service-card',
         { opacity: 0, y: 30 },
