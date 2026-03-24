@@ -1,35 +1,18 @@
-# Al Zakki Banquet Hall Website
+# Al-Zakki Hall Website
 
-A modern, beautifully designed website for Al Zakki Banquet Hall in Addalaichenai, Sri Lanka.
+Modern, responsive banquet hall website for Al-Zakki Hall in Addalaichenai, Ampara, Sri Lanka.
+
+**Live Site**: https://al-zakki.netlify.app
 
 ## Features
 
-- **Modern Morphing Effects** - Beautiful animated background shapes
-- **Floating Particles** - Animated particle effects in hero
-- **GSAP Animations** - Smooth scroll-triggered animations
-- **Responsive Design** - Works perfectly on all devices
-- **Event Services** - Wedding, Conference, Political meetings, and more
-- **Pricing Packages** - Clear and affordable options
-- **Contact Form** - Easy booking request submission
-
-## Quick Start
-
-Simply open `index.html` in a web browser.
-
-### Using a Local Server (Recommended)
-
-```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx serve
-
-# Using PHP
-php -S localhost:8000
-```
-
-Then visit `http://localhost:8000`
+- Responsive design for all devices
+- SEO optimized with meta tags, structured data
+- WhatsApp booking integration
+- Google Maps integration
+- GSAP animations
+- Dark theme with red accent
+- Mobile-first design
 
 ## Project Structure
 
@@ -39,59 +22,63 @@ al-zakki-banquet/
 ├── css/
 │   └── style.css       # All styles
 ├── js/
-│   └── main.js         # Animations & interactions
-└── assets/             # Add images here
+│   └── main.js         # JavaScript functions
+├── assets/             # Images (hall2.png)
+├── images/             # Social/SEO images
+├── sitemap.xml         # SEO sitemap
+└── README.md           # This file
 ```
 
-## Sections
+## Deploy to Netlify
 
-1. **Hero** - Animated intro with morphing background
-2. **About** - Why choose Al Zakki
-3. **Services** - 8 event types with details
-4. **Gallery** - Image grid with hover effects
-5. **Pricing** - 3 affordable packages
-6. **Contact** - Form + contact details
-7. **Footer** - Quick links & info
+1. Go to [app.netlify.com/drop](https://app.netlify.com/drop)
+2. Drag and drop the `al-zakki-banquet` folder
+3. Done! Your site is live at `*.netlify.app`
 
-## Customization
+Or connect to GitHub for auto-deploy:
+1. Push to GitHub repo
+2. Connect repo to Netlify
+3. Deploy automatically on push
 
-### Adding Images
+## Files to Update
 
-Replace the placeholders in:
-- `.image-placeholder` in About section
-- `.gallery-placeholder` in Gallery section
+| File | What to Update |
+|------|----------------|
+| index.html | All URLs (already set to al-zakki.netlify.app) |
+| js/main.js | WhatsApp number if different |
+| sitemap.xml | Update if domain changes |
 
-### Updating Contact Info
+## Required Images
 
-Edit in `index.html`:
-- Phone number
-- Email address
-- Location details
+| Image | Size | Location |
+|-------|------|----------|
+| Main Hall | 1200x900px | `assets/hall2.png` |
+| OG Image | 1200x630px | `images/og-image.jpg` |
+| Gallery | 800x600px | `assets/` |
 
-### Changing Colors
+## SEO Features
 
-Modify CSS variables in `style.css`:
-```css
-:root {
-    --primary: #6366f1;      /* Main accent color */
-    --primary-dark: #4f46e5; /* Darker shade */
-    --accent: #f43f5e;       /* Secondary accent */
-    --secondary: #0f172a;   /* Dark backgrounds */
-}
-```
+- [x] Meta description & keywords
+- [x] Google Search Console verified
+- [x] JSON-LD EventVenue schema
+- [x] Open Graph tags
+- [x] Twitter Card tags
+- [x] Geo tags (local SEO)
+- [x] Mobile viewport
+- [x] Alt text for images
+- [x] Canonical URL
+- [x] Sitemap
 
-## Browser Support
+## Technologies
 
-- Chrome 60+
-- Firefox 55+
-- Safari 11+
-- Edge 79+
+- HTML5, CSS3, JavaScript
+- GSAP Animations
+- Google Fonts
 
-## Dependencies (CDN)
+## Contact
 
-- GSAP 3.12 (Animations)
-- System Fonts (No external font loading)
+- **Phone**: +94 75 474 0232
+- **Email**: info@alzakki.com
+- **Location**: Akkaraipattu Kalmunai Road, Addalaichenai - 09, Ampara, Sri Lanka
 
-## License
-
-2024 Al Zakki Banquet Hall. All Rights Reserved.
+© 2024 Al-Zakki Hall
