@@ -400,8 +400,21 @@ img {
 .image-frame {
     position: relative;
     border-radius: var(--radius-lg);
-    overflow: hidden;
+    overflow: visible;
     border: 1px solid var(--border);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    padding: 20px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(220, 38, 38, 0.4);
+    z-index: 10;
 }
 
 .image-placeholder {
@@ -429,21 +442,10 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.experience-badge {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    color: white;
-    padding: 20px;
-    border-radius: var(--radius-md);
-    text-align: center;
-    box-shadow: 0 10px 40px rgba(220, 38, 38, 0.4);
 }
 
 .experience-badge .years {
@@ -454,6 +456,7 @@ img {
 }
 
 .experience-badge .text {
+    display: block;
     font-size: 0.75rem;
     font-weight: 500;
     opacity: 0.9;
@@ -1155,6 +1158,7 @@ img {
     .about-image {
         max-width: 500px;
         margin: 0 auto;
+        padding-bottom: 40px;
     }
     
     .gallery-grid {
@@ -1172,8 +1176,8 @@ img {
     }
     
     .experience-badge {
-        bottom: -16px;
-        right: 16px;
+        bottom: -15px;
+        right: 24px;
     }
 }
 
@@ -1330,16 +1334,34 @@ img {
         justify-content: center;
     }
     
+    .about {
+        padding: 80px 0;
+    }
+    
     .about-image {
-        max-width: 100%;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 16px 40px;
+    }
+    
+    .about-image .image-frame {
+        width: 100%;
+        aspect-ratio: 4/3;
+    }
+    
+    .image-placeholder {
+        aspect-ratio: 4/3;
     }
     
     .experience-badge {
-        position: relative;
-        bottom: auto;
-        right: auto;
-        margin-top: 20px;
-        display: inline-block;
+        bottom: -12px;
+        right: 20px;
+        padding: 14px 18px;
+    }
+    
+    .experience-badge .years {
+        font-size: 1.8rem;
     }
     
     .about-content h3 {
@@ -1361,11 +1383,22 @@ img {
     
     .contact-item {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
     }
     
     .contact-icon {
         margin-bottom: 8px;
+    }
+    
+    .contact-info h2,
+    .contact-info > p {
+        text-align: center;
+    }
+    
+    .contact-item h4,
+    .contact-item p {
+        text-align: center;
     }
     
     .pricing-card {
@@ -1396,6 +1429,70 @@ img {
         padding: 5px 12px;
     }
     
+    .about {
+        padding: 60px 0;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .about-image {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 16px 50px;
+    }
+    
+    .about-image .image-frame {
+        width: 100%;
+        aspect-ratio: 4/3;
+    }
+    
+    .image-placeholder {
+        aspect-ratio: 4/3;
+    }
+    
+    .experience-badge {
+        bottom: -10px;
+        right: 16px;
+        padding: 12px 14px;
+        gap: 6px;
+    }
+    
+    .experience-badge .years {
+        font-size: 1.3rem;
+        display: inline-block;
+    }
+    
+    .experience-badge .text {
+        font-size: 0.7rem;
+    }
+    
+    .service-card {
+        padding: 24px;
+    }
+    
+    .about-content h3 {
+        font-size: 1.4rem;
+        text-align: left;
+    }
+    
+    .about-content p {
+        font-size: 0.9rem;
+        text-align: left;
+    }
+    
+    .features-list {
+        padding-left: 0;
+    }
+    
+    .features-list li {
+        font-size: 0.85rem;
+        padding: 8px 0;
+    }
+    
     .service-card {
         padding: 24px;
     }
@@ -1408,18 +1505,6 @@ img {
     .service-icon svg {
         width: 40px;
         height: 40px;
-    }
-    
-    .experience-badge {
-        padding: 16px;
-    }
-    
-    .experience-badge .years {
-        font-size: 2rem;
-    }
-    
-    .experience-badge .text {
-        font-size: 0.65rem;
     }
     
     .gallery-overlay {

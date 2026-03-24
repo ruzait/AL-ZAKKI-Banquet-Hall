@@ -239,13 +239,36 @@ function initForm() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const submitBtn = form.querySelector('button[type="submit"]');
-        submitBtn.classList.add('loading');
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const eventType = document.getElementById('eventType').value;
+        const eventDate = document.getElementById('eventDate').value;
+        const guests = document.getElementById('guests').value;
+        const message = document.getElementById('message').value;
 
-        setTimeout(() => {
-            submitBtn.classList.remove('loading');
-            alert('Thank you for your booking request! We will contact you shortly.');
-            form.reset();
-        }, 1500);
+        const eventTypeNames = {
+            'wedding': 'Wedding Ceremony',
+            'walima': 'Walima / Lunch Party',
+            'conference': 'Conference Meeting',
+            'official': 'Official Event',
+            'awarding': 'Awarding Ceremony',
+            'competition': 'Competition Event',
+            'other': 'Other'
+        };
+
+        const whatsappMessage = `*🏛️ AL-ZAKKI BANQUET HALL - BOOKING REQUEST*%0A%0A` +
+            `👤 *Name:* ${name}%0A` +
+            `📞 *Phone:* ${phone}%0A` +
+            `📧 *Email:* ${email}%0A` +
+            `🎉 *Event Type:* ${eventTypeNames[eventType] || eventType}%0A` +
+            `📅 *Event Date:* ${eventDate}%0A` +
+            `👥 *Expected Guests:* ${guests || 'Not specified'}%0A` +
+            `💬 *Additional Details:* ${message || 'None'}`;
+
+        const whatsappUrl = `https://wa.me/94754740232?text=${whatsappMessage}`;
+        window.open(whatsappUrl, '_blank');
+        
+        form.reset();
     });
 }
