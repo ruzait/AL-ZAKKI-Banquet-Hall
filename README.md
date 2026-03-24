@@ -1,5 +1,7 @@
 # Al-Zakki Hall Website
 
+<img width="3240" height="3240" alt="Al-Zakki Hall Website" src="https://github.com/user-attachments/assets/37700621-e341-4a62-8bf7-7d2df26a589b" />
+
 Modern, responsive banquet hall website for Al-Zakki Hall in Addalaichenai, Ampara, Sri Lanka.
 
 **Live Site**: https://al-zakki.netlify.app
