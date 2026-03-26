@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initDynamicDates();
     initNavbar();
     initSmoothScroll();
+    initWhatsAppButtons();
     initGSAPAnimations();
     initForm();
 });
@@ -76,6 +77,7 @@ function initNavbar() {
 
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        if (anchor.classList.contains('book-now-btn')) return;
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
@@ -85,6 +87,19 @@ function initSmoothScroll() {
                     block: 'start'
                 });
             }
+        });
+    });
+}
+
+function initWhatsAppButtons() {
+    const whatsappNumber = '94754740232';
+    document.querySelectorAll('.book-now-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const message = this.getAttribute('data-message') || 'Hello! I would like to book Al-Zakki Banquet Hall for an event. Can you please provide more information?';
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
         });
     });
 }
