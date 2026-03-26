@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 :root {
     --bg-dark: #0a0a0a;
     --bg-card: #141414;
@@ -35,6 +39,8 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 h1, h2, h3, h4 {
@@ -51,6 +57,11 @@ a {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.gallery-item {
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .container {
@@ -244,17 +255,22 @@ img {
     position: relative;
     padding: 120px 24px 80px;
     overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 .hero-bg {
     position: absolute;
     inset: 0;
     z-index: 0;
+    overflow: hidden;
 }
 
 .hero-slider {
     position: absolute;
     inset: 0;
+    overflow: hidden;
+    will-change: transform;
 }
 
 .hero-slide {
@@ -265,6 +281,7 @@ img {
     background-repeat: no-repeat;
     opacity: 0;
     animation: slideShow 10s ease-in-out infinite;
+    will-change: transform, opacity;
 }
 
 .hero-slide:nth-child(1) {
@@ -299,6 +316,17 @@ img {
         rgba(10, 10, 10, 0.5) 50%,
         rgba(10, 10, 10, 0.9) 100%
     );
+}
+
+.hero-overlay::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to top, rgba(10, 10, 10, 0.8) 0%, transparent 100%);
+    pointer-events: none;
 }
 
 .hero-content {
@@ -489,7 +517,7 @@ img {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 12px 0;
+    padding: 6px 0;
     color: var(--text-secondary);
 }
 
@@ -668,6 +696,7 @@ img {
 .gallery {
     padding: 100px 0;
     background: var(--bg-dark);
+    overflow: hidden;
 }
 
 .gallery-grid {
@@ -691,24 +720,31 @@ img {
 .gallery-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--bg-card), var(--bg-card-hover));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary);
-    gap: 10px;
-    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .gallery-placeholder svg {
     opacity: 0.4;
+    color: var(--primary);
 }
 
 .gallery-placeholder p {
-    font-size: 0.8rem;
-    opacity: 0.5;
-    color: var(--text-muted);
+    font-size: 0.85rem;
+    opacity: 0.7;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.gallery-placeholder .placeholder-bg {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-card-hover));
 }
 
 .gallery-overlay {
@@ -731,8 +767,14 @@ img {
     opacity: 1;
 }
 
-.gallery-item:hover .gallery-placeholder {
+.gallery-item:hover .gallery-placeholder img {
     transform: scale(1.1);
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-placeholder img {
+    transform: scale(1.15);
+    filter: brightness(1.1);
 }
 
 .pricing {
@@ -855,6 +897,56 @@ img {
     margin-top: 48px;
     color: var(--text-muted);
     font-size: 0.85rem;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 100px 0;
+    background: var(--bg-dark);
+    position: relative;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    border-color: rgba(220, 38, 38, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.faq-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.faq-item a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.faq-item a:hover {
+    color: var(--primary-light);
 }
 
 .contact {
@@ -1185,6 +1277,13 @@ img {
 }
 
 @media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+        position: relative;
+    }
+    
     .nav-menu {
         position: fixed;
         top: 0;
@@ -1199,10 +1298,15 @@ img {
         transition: 0.3s ease;
         border-left: 1px solid var(--border);
         overflow-y: auto;
+        z-index: 999;
     }
     
     .nav-menu.active {
         right: 0;
+    }
+    
+    body.menu-open {
+        overflow: hidden;
     }
     
     .nav-link {
@@ -1282,6 +1386,19 @@ img {
         grid-template-columns: 1fr;
         max-width: 400px;
         margin: 0 auto;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .faq-item {
+        padding: 20px;
+    }
+    
+    .faq-item h3 {
+        font-size: 1rem;
     }
     
     .contact {
@@ -1546,5 +1663,111 @@ img {
     
     .pricing-card {
         padding: 24px 16px;
+    }
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 16px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 9999;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px) scale(0.5);
+}
+
+.whatsapp-float.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+    background: #22c55e;
+}
+
+.whatsapp-float:active {
+    transform: scale(0.95);
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 72px;
+    background: #ffffff;
+    color: #333;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-left-color: #ffffff;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 16px;
+        right: 16px;
+        width: 56px;
+        height: 56px;
+    }
+    
+    .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .whatsapp-tooltip {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    .container {
+        max-width: 100vw;
     }
 }

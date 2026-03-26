@@ -44,12 +44,14 @@ function initNavbar() {
     navToggle.addEventListener('click', () => {
         navToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
     });
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
         });
     });
 
@@ -271,4 +273,24 @@ function initForm() {
         
         form.reset();
     });
+}
+
+const whatsappBtn = document.querySelector('.whatsapp-float');
+const contactSection = document.querySelector('#contact');
+
+if (whatsappBtn && contactSection) {
+    function updateWhatsAppButton() {
+        const scrollPos = window.pageYOffset;
+        const contactTop = contactSection.offsetTop;
+        const viewportHeight = window.innerHeight;
+        
+        if (scrollPos > 300 && scrollPos + viewportHeight < contactTop + 100) {
+            whatsappBtn.classList.add('visible');
+        } else {
+            whatsappBtn.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', updateWhatsAppButton);
+    updateWhatsAppButton();
 }
