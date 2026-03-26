@@ -589,9 +589,15 @@ section {
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
+}
+
+.services-grid .service-card {
+    flex: 1 1 280px;
+    max-width: 400px;
 }
 
 .service-card {
@@ -1400,7 +1406,15 @@ section {
     }
     
     .services-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 16px;
+    }
+
+    .services-grid .service-card {
+        max-width: 100%;
+        width: 100%;
+        padding: 24px;
     }
     
     .gallery {
