@@ -5,7 +5,8 @@ Modern, responsive banquet hall website for Al-Zakki Hall in Addalaichenai, Ampa
 
 **Live Site**: https://al-zakki.netlify.app
 
-![WhatsApp Image 2026-03-24 at 22 57 56](https://github.com/user-attachments/assets/26fee76a-3da6-4f8b-b683-bbb73f989f6b
+![WhatsApp Image 2026-03-24 at 22 57 56](https://github.com/user-attachments/assets/6c98383a-d7f7-499a-92a3-c61078709fdc)
+
 
 ---
 
