@@ -1300,9 +1300,10 @@ section {
     }
     
     .about-image {
-        max-width: 500px;
+        width: 100%;
+        max-width: 600px;
         margin: 0 auto;
-        padding-bottom: 40px;
+        padding-bottom: 50px;
     }
     
     .gallery-grid {
@@ -1553,7 +1554,7 @@ section {
     
     .about-image {
         width: 100%;
-        max-width: 500px;
+        max-width: 600px;
         margin: 0 auto;
         padding: 0 16px 50px;
     }
@@ -1660,7 +1661,7 @@ section {
     
     .about-image {
         width: 100%;
-        max-width: 100%;
+        max-width: 600px;
         margin: 0 auto;
         padding: 0 16px 50px;
     }
