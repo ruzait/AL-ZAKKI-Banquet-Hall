@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initWhatsAppButtons();
     initGSAPAnimations();
     initForm();
+    initWhatsAppFloat();
+    initGalleryTouch();
 });
 
 function initDynamicDates() {
@@ -31,6 +33,7 @@ function initDynamicDates() {
 function initNavbar() {
     const navbar = document.querySelector('.navbar');
     const navToggle = document.getElementById('navToggle');
+    const navClose = document.getElementById('navClose');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
 
@@ -47,6 +50,14 @@ function initNavbar() {
         navMenu.classList.toggle('active');
         document.body.classList.toggle('menu-open');
     });
+
+    if (navClose) {
+        navClose.addEventListener('click', () => {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    }
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -290,22 +301,37 @@ function initForm() {
     });
 }
 
-const whatsappBtn = document.querySelector('.whatsapp-float');
-const contactSection = document.querySelector('#contact');
+function initWhatsAppFloat() {
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+    const contactSection = document.querySelector('#contact');
 
-if (whatsappBtn && contactSection) {
-    function updateWhatsAppButton() {
-        const scrollPos = window.pageYOffset;
-        const contactTop = contactSection.offsetTop;
-        const viewportHeight = window.innerHeight;
-        
-        if (scrollPos > 300 && scrollPos + viewportHeight < contactTop + 100) {
-            whatsappBtn.classList.add('visible');
-        } else {
-            whatsappBtn.classList.remove('visible');
+    if (whatsappBtn && contactSection) {
+        function updateWhatsAppButton() {
+            const scrollPos = window.pageYOffset;
+            const contactTop = contactSection.offsetTop;
+            const viewportHeight = window.innerHeight;
+            
+            if (scrollPos > 300 && scrollPos + viewportHeight < contactTop + 100) {
+                whatsappBtn.classList.add('visible');
+            } else {
+                whatsappBtn.classList.remove('visible');
+            }
         }
-    }
 
-    window.addEventListener('scroll', updateWhatsAppButton);
-    updateWhatsAppButton();
+        window.addEventListener('scroll', updateWhatsAppButton);
+        updateWhatsAppButton();
+    }
+}
+
+function initGalleryTouch() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const overlay = this.querySelector('.gallery-overlay');
+            if (overlay) {
+                overlay.style.opacity = overlay.style.opacity === '1' ? '0' : '1';
+            }
+        });
+    });
 }
