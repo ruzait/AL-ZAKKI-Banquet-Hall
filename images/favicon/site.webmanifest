@@ -1,21 +1,29 @@
 {
-  "name": "AL-Zakki",
-  "short_name": "AL-Zakki",
+  "name": "Al-Zakki Hall - Wedding & Event Banquet",
+  "short_name": "Al-Zakki Hall",
+  "description": "Sri Lanka's largest banquet venue for weddings, walima, conferences and events up to 3000 guests",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png",
+      "src": "/images/favicon/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
-      "src": "/web-app-manifest-512x512.png",
+      "src": "/images/favicon/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "categories": ["business", "events", "wedding"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
 }

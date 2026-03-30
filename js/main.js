@@ -7,7 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
     initForm();
     initWhatsAppFloat();
     initGalleryTouch();
+    initScrollTracking();
+    initServiceCardTracking();
+    initCTATracking();
 });
+
+function trackEvent(category, action, label = '') {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', action, {
+            'event_category': category,
+            'event_label': label
+        });
+    }
+}
 
 function initDynamicDates() {
     const currentYear = new Date().getFullYear();
@@ -64,6 +76,8 @@ function initNavbar() {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
             document.body.classList.remove('menu-open');
+            const linkText = link.textContent.trim().toLowerCase().replace(/\s+/g, '_');
+            trackEvent('navigation', 'click', linkText);
         });
     });
 
@@ -107,12 +121,21 @@ function initWhatsAppButtons() {
     document.querySelectorAll('.book-now-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
+            const trackLabel = this.getAttribute('data-track') || 'book_now';
             const message = this.getAttribute('data-message') || 'Hello! I would like to book Al-Zakki Banquet Hall for an event. Can you please provide more information?';
             const encodedMessage = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
             window.open(whatsappUrl, '_blank');
+            trackEvent('button', 'whatsapp_click', trackLabel);
         });
     });
+    
+    const whatsappFloat = document.querySelector('.whatsapp-float');
+    if (whatsappFloat) {
+        whatsappFloat.addEventListener('click', function() {
+            trackEvent('button', 'whatsapp_click', 'whatsapp_float');
+        });
+    }
 }
 
 function initGSAPAnimations() {
@@ -297,6 +320,8 @@ function initForm() {
         const whatsappUrl = `https://wa.me/94754740232?text=${whatsappMessage}`;
         window.open(whatsappUrl, '_blank');
         
+        trackEvent('form', 'submit', 'booking_form');
+        
         form.reset();
     });
 }
@@ -331,6 +356,51 @@ function initGalleryTouch() {
             const overlay = this.querySelector('.gallery-overlay');
             if (overlay) {
                 overlay.style.opacity = overlay.style.opacity === '1' ? '0' : '1';
+            }
+            const imgAlt = this.querySelector('img')?.alt || 'gallery_item';
+            trackEvent('gallery', 'click', imgAlt);
+        });
+    });
+}
+
+function initScrollTracking() {
+    const thresholds = [25, 50, 75, 100];
+    let tracked = new Set();
+    
+    window.addEventListener('scroll', () => {
+        const scrollHeight = document.body.scrollHeight - window.innerHeight;
+        if (scrollHeight <= 0) return;
+        
+        const scrollPercent = Math.round((window.scrollY / scrollHeight) * 100);
+        
+        thresholds.forEach(threshold => {
+            if (scrollPercent >= threshold && !tracked.has(threshold)) {
+                tracked.add(threshold);
+                trackEvent('scroll', 'depth', `scroll_${threshold}%`);
+            }
+        });
+    });
+}
+
+function initServiceCardTracking() {
+    const serviceCards = document.querySelectorAll('.service-card:not(.cta-card)');
+    
+    serviceCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const serviceName = this.getAttribute('data-service') || 'unknown';
+            trackEvent('service', 'click', serviceName);
+        });
+    });
+}
+
+function initCTATracking() {
+    document.querySelectorAll('.btn[data-track]').forEach(btn => {
+        if (btn.classList.contains('book-now-btn')) return;
+        
+        btn.addEventListener('click', function(e) {
+            const trackLabel = this.getAttribute('data-track');
+            if (trackLabel) {
+                trackEvent('button', 'click', trackLabel);
             }
         });
     });

@@ -9,5 +9,3 @@ Crawl-delay: 1
 # Block access to unnecessary files
 Disallow: /node_modules/
 Disallow: /.git/
-Disallow: /css/
-Disallow: /js/

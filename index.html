@@ -33,7 +33,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" href="/images/favicon/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link
       rel="icon"
       type="image/png"
@@ -53,6 +53,7 @@
       href="/images/favicon/favicon-96x96.png"
     />
     <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/images/favicon/site.webmanifest" />
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
@@ -458,7 +459,7 @@
           Your Perfect Celebration Awaits in Addalaichenai
         </p>
         <div class="hero-cta">
-          <a href="#services" class="btn btn-primary">
+          <a href="#services" class="btn btn-primary" data-track="hero_explore_events">
             <span>Explore Events</span>
             <svg
               width="18"
@@ -474,6 +475,7 @@
           <a
             href="#"
             class="btn btn-ghost book-now-btn"
+            data-track="hero_book_now"
             data-message="Hello! I would like to book Al-Zakki Banquet Hall for an event. Can you please provide more information?"
             >Book Now</a
           >
@@ -601,7 +603,7 @@
                 <span>Flexible & affordable packages for all budgets</span>
               </li>
             </ul>
-            <a href="#services" class="btn btn-primary">Our Services</a>
+            <a href="#services" class="btn btn-primary" data-track="about_our_services">Our Services</a>
           </div>
         </div>
       </div>
@@ -803,7 +805,7 @@
               Let our experienced team handle every detail of your event from
               start to finish.
             </p>
-            <a href="#contact" class="btn btn-primary btn-block">Get Quote</a>
+            <a href="#contact" class="btn btn-primary btn-block" data-track="services_get_quote">Get Quote</a>
           </div>
         </div>
       </div>
@@ -1184,6 +1186,7 @@
             <a
               href="#"
               class="btn btn-outline book-now-btn"
+              data-track="pricing_basic_package"
               data-message="Hello! I am interested in the Basic Package at Al-Zakki Banquet Hall. Please provide more details."
               >Book Now</a
             >
@@ -1269,6 +1272,7 @@
             <a
               href="#"
               class="btn btn-primary book-now-btn"
+              data-track="pricing_walima_package"
               data-message="Hello! I would like to book the Walima Package at Al-Zakki Banquet Hall. Please provide more details."
               >Book Now</a
             >
@@ -1366,6 +1370,7 @@
             <a
               href="#"
               class="btn btn-outline book-now-btn"
+              data-track="pricing_special_programs"
               data-message="Hello! I am interested in the Special Programs package at Al-Zakki Banquet Hall. Please provide more details."
               >Book Now</a
             >
@@ -1462,6 +1467,7 @@
             <a
               href="#"
               class="btn btn-outline book-now-btn"
+              data-track="pricing_premium_rental"
               data-message="Hello! I am interested in the Premium Rental package at Al-Zakki Banquet Hall. Please provide more details."
               >Book Now</a
             >
@@ -1666,7 +1672,7 @@
               <a
                 href="https://maps.app.goo.gl/jbexDVrNeTQD7rGx8"
                 target="_blank"
-                class="btn btn-primary btn-block map-btn"
+                class="btn btn-primary btn-block map-btn" data-track="contact_get_directions"
               >
                 <svg
                   width="18"
